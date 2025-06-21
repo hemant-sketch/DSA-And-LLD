@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/spiral-matrix/
 
 // TC = O(m*n)
-// SC = O(m*n)
+// SC = O(1)
 
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
