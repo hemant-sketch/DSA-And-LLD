@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/valid-sudoku/description/
 
-// TC = O(m*n)
-// SC = 0(m*n)
+// TC = O(m*n) or constant
+// SC = 0(m*n) or constant
 
 class Solution {
     public boolean isRowValid(char[][] board, int row){
