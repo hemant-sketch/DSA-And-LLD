@@ -2,6 +2,7 @@
 
 // TC = O(n*logn) in both average and worst case
 // SC = O(n)
+// not stable
   
 class Solution {
     ArrayList<Integer> data;
