@@ -19,3 +19,7 @@ list.add(Integer.valueOf(5));   // Manual boxing
 int value = list.get(0).intValue(); // Manual unboxing
 
 - ruby and smalltalk are pure oop language
+
+- Integer caching in java
+
+-  char c = reader.next().charAt(0); //to take input from user 
