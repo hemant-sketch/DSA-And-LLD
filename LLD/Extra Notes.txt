@@ -1,1 +1,21 @@
+- Integer num = null;
+int n = num; // 💥 Crash! (NullPointerException)
 
+- Equality Checks:
+java
+Integer a = 127;
+Integer b = 127;
+System.out.println(a == b); // true (cached values)
+Integer c = 128;
+Integer d = 128;
+System.out.println(c == d); // false (new objects!)
+→ Always use .equals() for wrapper objects!
+
+- ArrayList<Integer> list = new ArrayList<>();
+list.add(5);                   // Autoboxing: int → Integer
+int value = list.get(0);       // Unboxing: Integer → int
+This is equivalent to:java
+list.add(Integer.valueOf(5));   // Manual boxing
+int value = list.get(0).intValue(); // Manual unboxing
+
+- ruby and smalltalk are pure oop language
