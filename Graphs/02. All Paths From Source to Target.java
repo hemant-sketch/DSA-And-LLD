@@ -1,8 +1,8 @@
-// Lc - 
+// Lc - 797
 // https://leetcode.com/problems/all-paths-from-source-to-target/description/
 
-TC = 
-SC = 
+TC = O(exponential)
+SC = O(n)
 
 class Solution {
     List<List<Integer>> paths = new ArrayList<>();
