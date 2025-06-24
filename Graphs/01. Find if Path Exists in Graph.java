@@ -4,6 +4,7 @@
 // TC = O(exponential) 
 // Sc = O(n)
 
+// dfs
 class Graph{
     public int n;
     public ArrayList<Integer>[] adj;
@@ -31,6 +32,56 @@ class Graph{
                 return true;
             }
         }
+        return false;
+
+    }
+}
+
+class Solution {
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+        Graph g = new Graph(n);
+        for(int[] edge : edges){
+            g.addEdge(edge[0], edge[1]);
+        }
+
+        boolean[] vis = new boolean[n];
+        return g.hasPath(source, destination, vis);
+    }
+}
+
+// bfs
+class Graph{
+    public int n;
+    public ArrayList<Integer>[] adj;
+
+    public Graph(int n){
+        this.n = n;
+        adj = new ArrayList[n];
+        for(int idx = 0; idx < n; idx++){
+            adj[idx] = new ArrayList<>();
+        }
+    }
+
+    public void addEdge(int src, int dest){
+        adj[src].add(dest);
+        adj[dest].add(src);
+    }
+
+    public boolean hasPath(int src, int dest, boolean[] vis){
+        Queue<Integer> q = new ArrayDeque<>();
+        q.add(src);
+
+        while(q.size() > 0){
+            src = q.remove();
+            if(src == dest) return true;
+
+            if(vis[src] == true) continue;
+            vis[src] = true;
+            for(int nbr : adj[src]){
+                q.add(nbr);
+            }
+        }
+
         return false;
 
     }
