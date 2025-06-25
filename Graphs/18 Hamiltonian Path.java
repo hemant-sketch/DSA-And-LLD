@@ -1,6 +1,6 @@
 // https://www.geeksforgeeks.org/problems/hamiltonian-path2522/1
 
-// TC = O(N^2)
+// TC = Exponential
 // SC = O(N+E)
 
 // User function Template for Java
