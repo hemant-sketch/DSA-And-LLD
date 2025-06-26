@@ -18,7 +18,6 @@ class Graph {
 
     public void addEdge(int src, int dest){
         adj[src].add(dest);
-        adj[dest].add(src);
     }
 }
 
@@ -83,7 +82,6 @@ class Graph {
 
     public void addEdge(int src, int dest){
         adj[src].add(dest);
-        adj[dest].add(src);
     }
 }
 
