@@ -2,13 +2,25 @@ class Main {
     public class PriorityQueue {
         ArrayList<Integer> data = new ArrayList<>();
     }
+
+    public PriorityQueue() {
+        }
+
+    public PriorityQueue(int[] arr) { //agar ek saath poora array aagya       
+        // for(int val: data) add(val);  // aise O(N*log N) time lega
+
+        for (int val : arr)                                             // but aise O(N) and per insertion is O(1)
+            data.add(val); // Complete Binary Tree
+        for (int idx = data.size() - 1; idx >= 0; idx--)
+            downheapify(idx); // Heap Order Property
+    }
     
-    public void add(int val) {   //O(logn) because of upheapify
+    public void add(int val) {   //O(logN)because of upheapify
         data.add(val);
         upheapify(data.size()-1)
     }
     
-    void upheapify(int idx) {    //O(logn)
+    void upheapify(int idx) {    //O(logN)
         if(idx = 0) return; //top par hi add hua hai
         
         int par = (idx - 1) / 2;
@@ -29,7 +41,7 @@ class Main {
             return data.size();
     }
     
-    public int remove() {      //O(logn) because of downheapify
+    public int remove() {      //O(logN) because of downheapify
         if(data.size() == 0){
             System.out.println("Underflow");
             return -1;
@@ -42,7 +54,7 @@ class Main {
         return val;
     }
     
-    void downheapify(int idx) {    //O(logn)
+    void downheapify(int idx) {    //O(logN)
         int left = 2*left + 1;
         int right = 2*left + 2;
         int min = idx;
@@ -59,3 +71,5 @@ class Main {
         downheapify(min);
     }
 } 
+
+
