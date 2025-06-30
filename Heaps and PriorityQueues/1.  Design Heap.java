@@ -12,7 +12,7 @@ class Main {
         if(idx = 0) return; //top par hi add hua hai
         
         int par = (idx - 1) / 2;
-        if(data.get(par) < data.get(idx)) return;
+        if(data.get(par) < data.get(idx)) return;    // idhar > krde agar max heap banana hai
         Collections.swap(data, par, idx);
         upheapify(par);
     }
@@ -47,10 +47,10 @@ class Main {
         int right = 2*left + 2;
         int min = idx;
         
-        if(left < data.size() && data.get(left) < data.get(min)){
+        if(left < data.size() && data.get(left) < data.get(min)){   // idhar > krde agar max heap banana hai
             min = left;
         }
-        if(right < data.size() && data.get(right) < data.get(min)){
+        if(right < data.size() && data.get(right) < data.get(min)){   // idhar > krde agar max heap banana hai
             min = right;
         }
         
