@@ -1,8 +1,11 @@
 // Lc 410
 // https://leetcode.com/problems/split-array-largest-sum/description/
 
+// Lc 1011
+// https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
+
 // TC = O(N*logN)
-//
+// SC = O(1)
 
 class Solution {
     public long max(int[] books){
