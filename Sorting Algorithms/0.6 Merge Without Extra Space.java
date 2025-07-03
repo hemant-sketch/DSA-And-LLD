@@ -1,6 +1,6 @@
 // https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1
 
-// TC = O(N1 + N2)
+// TC = O(N^2)
 // SC = O(1)
 
 // Par yeh TLE dega
