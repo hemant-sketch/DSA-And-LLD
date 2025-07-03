@@ -4,7 +4,7 @@
 // TC = O(N*logN)
 // SC = O(N)  larr aur rarr ki wajeh se aur recursion stack log n hai
  
-// stable
+// not stable
 
 class Solution {
     public int[] merge(int[] larr, int[] rarr){
