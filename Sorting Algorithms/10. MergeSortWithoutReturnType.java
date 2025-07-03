@@ -3,6 +3,8 @@
 // TC = O(N*logN)
 // SC = O(N)
 
+// not inplace
+
 class Solution {
     public void merge(int[] arr, int left, int mid, int right) {
         int[] res = new int[right - left + 1];
