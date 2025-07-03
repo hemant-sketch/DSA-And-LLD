@@ -2,8 +2,8 @@
 // https://leetcode.com/problems/sort-an-array/description/
 
 // TC = O(N*logN)
-// SC = O(1)
-
+// SC = O(N)  recursion satck startk satark stark
+ 
 // stable
 
 class Solution {
