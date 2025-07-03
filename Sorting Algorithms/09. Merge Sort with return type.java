@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/sort-an-array/description/
 
 // TC = O(N*logN)
-// SC = O(N)  recursion satck startk satark stark
+// SC = O(N)  larr aur rarr ki wajeh se aur recursion stack log n hai
  
 // stable
 
