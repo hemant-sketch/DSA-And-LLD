@@ -1,6 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/selection-sort/1
 
-// TC = O(n^2)
+// TC = O(N^2)
 // SC = O(1)
 // stable = NO;
 
