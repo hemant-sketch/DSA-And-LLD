@@ -4,6 +4,8 @@
 // Time = O(N) Linear, Space = O(1) Constant (Inplace)
 // Not Stable (Relative Order Not Maintained for Greater Elements)
 
+// lomuto partitioning
+
 class Main {
 
     public static void partition(int[] arr, int pivot) {
