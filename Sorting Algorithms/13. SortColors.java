@@ -26,6 +26,7 @@ class Solution {
 // Partioning Method (single pass)
 // TC = O(N)
 // SC = O(1)
+// not stable
 
 class Solution {
     public void swap(int[] nums, int idx1, int idx2){
