@@ -4,6 +4,8 @@
 // TC = O(N*logN)
 // SC = O(1)
 
+// stable
+
 class Solution {
     public int[] merge(int[] larr, int[] rarr){
         int left = 0;
