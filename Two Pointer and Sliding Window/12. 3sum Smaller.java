@@ -22,7 +22,7 @@ class Solution {
         return count;
     }
 
-    long countTriplets(int n, int sum, long arr[]) {
+    public long countTriplets(int n, int sum, long arr[]) {
         Arrays.sort(arr);
         long totalTriplets = 0;
 
