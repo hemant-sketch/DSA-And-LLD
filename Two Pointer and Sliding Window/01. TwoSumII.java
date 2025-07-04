@@ -4,6 +4,8 @@
 // TC = O(N)
 // SC = O(1)
 
+//Two Sum wala bhai krdena hashing se
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int left = 0;
