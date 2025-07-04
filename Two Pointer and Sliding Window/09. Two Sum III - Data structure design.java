@@ -2,7 +2,8 @@
 // https://www.lintcode.com/problem/607/
 
 // TC = O(N)
-// SC = O(N)
+// SC = O(NlogN)
+// its betetr done with hashmap 
 
 public class TwoSum {
     ArrayList<Integer> data;
