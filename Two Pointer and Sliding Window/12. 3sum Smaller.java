@@ -5,8 +5,7 @@
 
 class Solution {
 
-    public long twoSumSmaller(long[] arr, int startIdx, long target) {
-        int left = startIdx;
+    public long twoSumSmaller(long[] arr, int left, long target) {
         int right = arr.length - 1;
         long count = 0;
 
@@ -22,7 +21,7 @@ class Solution {
         return count;
     }
 
-    public long countTriplets(int n, int sum, long arr[]) {
+    long countTriplets(int n, int sum, long arr[]) {
         Arrays.sort(arr);
         long totalTriplets = 0;
 
