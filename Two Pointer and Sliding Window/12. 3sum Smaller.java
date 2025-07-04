@@ -26,9 +26,9 @@ class Solution {
         Arrays.sort(arr);
         long totalTriplets = 0;
 
-        for (int i = 0; i < arr.length - 2; i++) {
-            long remainingSum = (long)sum - arr[i];
-            totalTriplets += twoSumSmaller(arr, i + 1, remainingSum);
+        for (int first = 0; first < arr.length - 2; first++) {
+            long remainingSum = (long)sum - arr[first];
+            totalTriplets += twoSumSmaller(arr, first + 1, remainingSum);
         }
         return totalTriplets;
     }
