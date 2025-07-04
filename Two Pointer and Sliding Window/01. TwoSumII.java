@@ -5,6 +5,7 @@
 // SC = O(1)
 
 //Two Sum wala bhai krdena hashing se
+// count pairs with given sum(gfg), can be done by hashmap only
 // 9 wala is best with hashmap
 
 class Solution {
