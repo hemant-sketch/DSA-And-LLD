@@ -5,6 +5,7 @@
 // SC = O(1)
 
 //Two Sum wala bhai krdena hashing se
+// 9 wala is best with hashmap
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
