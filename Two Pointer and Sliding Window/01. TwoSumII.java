@@ -7,6 +7,7 @@
 //Two Sum wala bhai krdena hashing se
 // count pairs with given sum(gfg), can be done by hashmap only - yeh bhi kahi krwwaya hai
 // 9 wala is best with hashmap  3.18 of first video of this
+// https://www.interviewbit.com/problems/maximum-sum-triplet/      yeh bhi nhi hua hai abhi
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
