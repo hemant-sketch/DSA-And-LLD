@@ -1,8 +1,8 @@
 // Lc 350
 // https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 
-// TC = O(N)
-// SC = O(N)
+// TC = O(N1 + N2)
+// SC = O(N1)
 
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
