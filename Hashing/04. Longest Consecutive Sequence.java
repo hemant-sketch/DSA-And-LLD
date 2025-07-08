@@ -27,6 +27,31 @@ class Solution {
     }
 }
 
-// Hashmap
-//
-//
+// Hashset
+// TC = O(N)
+// SC = O(N)
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        HashSet<Integer> st = new HashSet<>();
+        int res = 0;
+
+        for(int val : nums){
+            st.add(val);
+        }
+
+        for(int val : nums){
+            while(st.contains(val) && !st.contains(val-1)){
+                int curr = val;
+                int count = 0;
+                while(st.contains(curr)){
+                    st.remove(curr);
+                    curr++;
+                    count++;
+                }
+
+                res = Math.max(res, count);
+            }
+        }
+        return res;
+    }
+}
