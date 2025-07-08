@@ -7,7 +7,7 @@
 class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         for(int idx = 0; idx < nums.length; idx++) {
-            int index = Math.abs(nums[idx]) - 1;
+            int index = Math.abs(nums[idx]) - 1;   //jo already negative hogae honge unke liye yeh krre
             if(nums[index] > 0){
                 nums[index] = -nums[index];
             }
