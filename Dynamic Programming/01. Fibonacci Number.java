@@ -1,9 +1,10 @@
 // Lc 509
 // https://leetcode.com/problems/fibonacci-number/description/
 
-// TC = O(N)
+// TC = O(N)  //base case ki call ko nahi mante kuch hoti woh
 // SC = O(N)
 
+// Memoization
 class Solution {
     public int helper(int n, int[] dp){
         if(n == 0 || n == 1) return n;
@@ -19,5 +20,41 @@ class Solution {
         int[] dp = new int[n+1]; //taaki zero on zero index rahe
         Arrays.fill(dp, -1);
         return helper(n , dp);
+    }
+}
+
+// Tabulation
+class Solution {
+    public int fib(int n){
+        if(n == 0 || n == 1) return n;
+        
+        int[] dp = new int[n+1];
+        dp[0] = 0;
+        dp[1] = 1;
+
+        for(int idx = 2; idx <= n; idx++){
+            dp[idx] = dp[idx-1] + dp[idx-2];
+        }
+
+        return dp[n];
+    }
+}
+
+// Space Optimization
+class Solution {
+    public int fib(int n){
+        if(n == 0 || n == 1) return n;
+        
+        int prev1 = 0;
+        int prev2 = 1;
+
+        for(int idx = 2; idx <= n; idx++){
+            int curr = prev1 + prev2;
+            prev1 = prev2;
+            prev2 = curr;
+
+        }
+
+        return prev2;
     }
 }
