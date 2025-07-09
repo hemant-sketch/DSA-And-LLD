@@ -61,3 +61,5 @@ class Solution {
         return prev2;
     }
 }
+
+// Binet's formula
