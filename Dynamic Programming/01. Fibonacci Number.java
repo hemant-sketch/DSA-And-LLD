@@ -41,7 +41,7 @@ class Solution {
     }
 }
 
-// Space Optimization
+// Space Optimization   // Two pointer technique
 // TC = O(N)  
 // SC = O(1)
 class Solution {
