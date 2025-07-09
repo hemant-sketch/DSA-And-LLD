@@ -10,7 +10,7 @@ class Solution {
 
         for(int idx  = 0; idx < n; idx++){
             int original = nums[idx] % (n+1);
-            if(original < n){
+            if(original < n){   // agar size 10 aur taki nums[10] wala na aye
                 nums[original] += (n+1);
             }
         }
