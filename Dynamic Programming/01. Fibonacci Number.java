@@ -1,10 +1,9 @@
 // Lc 509
 // https://leetcode.com/problems/fibonacci-number/description/
 
+// Memoization
 // TC = O(N)  //base case ki call ko nahi mante kuch hoti woh
 // SC = O(N)
-
-// Memoization
 class Solution {
     public int helper(int n, int[] dp){
         if(n == 0 || n == 1) return n;
@@ -24,6 +23,8 @@ class Solution {
 }
 
 // Tabulation
+// TC = O(N)  
+// SC = O(N)
 class Solution {
     public int fib(int n){
         if(n == 0 || n == 1) return n;
@@ -41,6 +42,8 @@ class Solution {
 }
 
 // Space Optimization
+// TC = O(N)  
+// SC = O(1)
 class Solution {
     public int fib(int n){
         if(n == 0 || n == 1) return n;
