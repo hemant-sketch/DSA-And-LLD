@@ -23,7 +23,7 @@ class Solution {
 class Solution {
     public int findSubarray(int[] arr) {
         HashMap<Integer, Integer> freq = new HashMap<>();
-        freq.put(0, 1);   // very important line  //ki ek khali subarray aara hai with sum = 0
+        freq.put(0, 1);   // very important line  //ki ek khali subarray aara hai with sum = 0 //jab hum ek bhi element nhi lere gote tab to prefix sum zero hi aata na
         int sum = 0;
         int count = 0;
         
