@@ -23,7 +23,7 @@ class Solution {
 
 // optimum using hashing
 // TC = O(N)
-// SC = O(N)
+// SC = O(1) //26 hai constant
 
 class Solution {
     public int firstUniqChar(String s) {
