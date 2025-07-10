@@ -30,7 +30,7 @@ class Solution {
         
         for(int val : nums){
             sum += val;
-            count += freq.getOrDefault(sum - k, 0);
+            count += freq.getOrDefault(sum - k, 0);   // pehle hum count ke liye porrana search krre the but ab hum sum - k search krege 
             freq.put(sum, freq.getOrDefault(sum, 0) + 1);
         }
         return count;
