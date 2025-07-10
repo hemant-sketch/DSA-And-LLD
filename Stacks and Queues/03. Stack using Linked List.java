@@ -11,13 +11,13 @@ class MyStack {
     }
     StackNode head = null;
     
-    void push(int a) {
+    void push(int a) {  //O(1)
         StackNode Node = new StackNode(a);
         Node.next = head;
         head = Node;
     }
 
-    int pop() {
+    int pop() {   //O(1)
         if(head == null) return -1;
         int ans = head.data;
         head = head.next;
