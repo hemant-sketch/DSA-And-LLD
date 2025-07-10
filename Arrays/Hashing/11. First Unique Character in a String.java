@@ -22,6 +22,25 @@ class Solution {
 }
 
 // optimum using hashing
-//
-//
+// TC = O(N)
+// SC = O(N)
+
+class Solution {
+    public int firstUniqChar(String s) {
+        int[] freq = new int[26];
+        for(int idx = 0; idx < s.length(); idx++){
+            int index = s.charAt(idx) - 'a';
+            freq[index]++;
+        }
+
+        for(int idx = 0; idx < s.length(); idx++){
+            int index = s.charAt(idx) - 'a';
+            if(freq[index] == 1){
+                return idx;
+            }
+        }
+
+        return -1;
+    }
+}
 
