@@ -1,5 +1,8 @@
+// Lc 32
+// https://leetcode.com/problems/longest-valid-parentheses/description/
 
-
+// TC = O(N)
+// SC = O(N)
 
 class Solution {
     public int longestValidParentheses(String s) {
