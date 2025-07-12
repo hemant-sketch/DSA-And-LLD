@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/problems/binary-array-sorting-1587115620/1
 
+// brute - frequency coi=unt krke but O(2N)
+
 // TC = O(N)
 // SC = O(1)
 
