@@ -3,6 +3,7 @@
 // TC = O(N)
 // SC = O(N)
 
+// left to right
 class Solution {
     public ArrayList<Integer> nextLargerElement(int[] arr) {
         Stack<Integer> stk = new Stack<>();
@@ -14,6 +15,29 @@ class Solution {
                 nge[stk.pop()] = arr[idx];
             }
             
+            stk.push(idx);
+        }
+        
+        ArrayList<Integer> res = new ArrayList<>();
+        for(int idx = 0 ; idx < arr.length; idx++){
+            res.add(nge[idx]);
+        }
+        
+        return res;
+    }
+}
+
+// right to left
+class Solution {
+    public ArrayList<Integer> nextLargerElement(int[] arr) {
+        Stack<Integer> stk = new Stack<>();
+        int[] nge = new int[arr.length];
+        
+        for(int idx = arr.length-1; idx >= 0; idx--){
+            while(stk.size() > 0 && arr[stk.peek()] <= arr[idx]){
+                stk.pop();
+            }
+            nge[idx] = (stk.size() > 0) ? arr[stk.peek()] : -1;
             stk.push(idx);
         }
         
