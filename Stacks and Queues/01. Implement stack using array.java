@@ -1,3 +1,6 @@
+// flow 1 2 5 9 10 
+
+
 // https://www.geeksforgeeks.org/problems/implement-stack-using-array/1
 
 class MyStack {
