@@ -1,6 +1,8 @@
 // Quick Sort Parititoning Logic
 // https://www.pepcoding.com/resources/online-java-foundation/time-and-space-complexity/partition-an-array-official/ojquestion
 
+// brute force - left right pointers, jo chota woh left and left++ aur jo chota woh right mien aur right--
+
 // Time = O(N) Linear, Space = O(1) Constant (Inplace)
 // Not Stable (Relative Order Not Maintained for Greater Elements)
 
