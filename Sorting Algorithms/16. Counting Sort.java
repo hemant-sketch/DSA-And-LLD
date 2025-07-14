@@ -1,6 +1,8 @@
+// bigegr values aur scattered values pe count sort work nhi krta
 // TC = O(N+D)    // D is the size of an array
 // SC = O(N)
-
+// not in place
+// not stable
 class Solution {
     public int[] sortArray(int[] nums) {
         int min = -50000;
@@ -22,3 +24,4 @@ class Solution {
     }
 
 }
+
