@@ -1,7 +1,7 @@
 // Lc 901
 // https://leetcode.com/problems/online-stock-span/description/
 
-// TC = O(N)
+// TC = O(N)   average O(1)
 // SC = O(N)
 
 class StockSpanner { 
