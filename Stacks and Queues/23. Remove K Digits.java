@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/remove-k-digits/description/
 
 // TC = O(1)
-// SC = O(N) because of string builder
+// SC = O(N) because of string builder if we do not consider stringbuilder as extra then O(1)
 
 // eg 2560079489
 
