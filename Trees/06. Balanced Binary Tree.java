@@ -4,6 +4,7 @@
 // TC = O(N)
 // SC = O(H)
 
+// this is okay but not the best solution, because global variable
 class Solution {
     public boolean balance = true;
     public int findHeight(TreeNode root){
@@ -16,5 +17,30 @@ class Solution {
     public boolean isBalanced(TreeNode root) {
         findHeight(root);
         return balance;
+    }
+}
+
+// the most optimised solution
+class Solution {
+    public static class Pair{
+        int height = 0;
+        boolean balance = true;
+    }
+
+    public Pair dfs(TreeNode root){
+        if(root == null) return new Pair();
+
+        Pair l = dfs(root.left);
+        Pair r = dfs(root.right);
+
+        Pair curr = new Pair();
+        curr.height = Math.max(l.height, r.height) + 1;
+        curr.balance = l.balance && r.balance;
+        if(Math.abs(l.height - r.height) > 1) curr.balance = false;
+        return curr;
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        return dfs(root).balance;
     }
 }
