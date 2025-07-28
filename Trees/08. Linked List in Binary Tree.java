@@ -1,7 +1,7 @@
 // Lc 1367
 // https://leetcode.com/problems/linked-list-in-binary-tree/description/
 
-// TC = O(N)
+// TC = O(N^2)
 // SC = O(H)
 
 class Solution {
