@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 
 // TC = O(N)
-// SC = O(N)
+// SC = O(H)
 
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
