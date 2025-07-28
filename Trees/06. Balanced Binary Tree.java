@@ -22,7 +22,7 @@ class Solution {
 
 // the most optimised solution
 class Solution {
-    public static class Pair{
+    public static class Pair{    //aur static isliye banaya taaki solution ke object ke bina Pair bna sku
         int height = 0;
         boolean balance = true;
     }
@@ -36,6 +36,31 @@ class Solution {
         Pair curr = new Pair();
         curr.height = Math.max(l.height, r.height) + 1;
         curr.balance = l.balance && r.balance;     //kiuki curr.balance humesha true rahega agar yeh check nhi diya toh
+        if(Math.abs(l.height - r.height) > 1) curr.balance = false;
+        return curr;
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        return dfs(root).balance;
+    }
+}
+
+// bestestest ans
+class Solution {
+    public static class Pair{
+        int height = 0;
+        boolean balance = true;
+    }
+
+    public Pair dfs(TreeNode root){
+        if(root == null) return new Pair();
+
+        Pair l = dfs(root.left);
+        Pair r = dfs(root.right);
+
+        Pair curr = new Pair();
+        curr.height = Math.max(l.height, r.height) + 1;
+        curr.balance = l.balance && r.balance;
         if(Math.abs(l.height - r.height) > 1) curr.balance = false;
         return curr;
     }
