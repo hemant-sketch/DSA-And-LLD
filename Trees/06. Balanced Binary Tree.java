@@ -35,7 +35,7 @@ class Solution {
 
         Pair curr = new Pair();
         curr.height = Math.max(l.height, r.height) + 1;
-        curr.balance = l.balance && r.balance;
+        curr.balance = l.balance && r.balance;     //kiuki curr.balance humesha true rahega agar yeh check nhi diya toh
         if(Math.abs(l.height - r.height) > 1) curr.balance = false;
         return curr;
     }
