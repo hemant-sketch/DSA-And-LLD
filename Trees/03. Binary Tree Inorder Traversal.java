@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 
 // TC = O(N)
-// TC = O(N)
+// TC = O(H)
 
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
