@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/binary-tree-preorder-traversal/description/
 
 // TC = O(N)
-// SC = O(N)
+// SC = O(H)
 
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
