@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/symmetric-tree/description/
 
 // TC = O(N)
-// SC = O(N)
+// SC = O(H)
 
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
