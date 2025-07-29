@@ -17,3 +17,4 @@ class Solution {
         return isSameTree(root.left, root.right);
     }
 }
+
