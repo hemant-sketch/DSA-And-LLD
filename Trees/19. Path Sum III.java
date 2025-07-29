@@ -1,8 +1,8 @@
 // Lc 437
 // https://leetcode.com/problems/path-sum-iii/description/
 
-// TC = O()
-// SC = O()
+// TC = O(N^2)
+// SC = O(H)
 
 class Solution {
     public int dfs(TreeNode root, long targetSum){
