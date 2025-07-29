@@ -1,7 +1,7 @@
 // Lc 572
 // https://leetcode.com/problems/subtree-of-another-tree/description/
 
-// TC = O(N)
+// TC = O(N^2)
 // SC = O(H)
 
 class Solution {
