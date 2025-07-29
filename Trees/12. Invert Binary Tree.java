@@ -1,0 +1,19 @@
+// Lc 226
+// https://leetcode.com/problems/invert-binary-tree/description/
+
+// TC = O(N)
+// TC = O(H)
+
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root == null){
+            return null;
+        }
+        TreeNode l = invertTree(root.left);
+        TreeNode r = invertTree(root.right);
+        root.left = r;
+        root.right = l;
+        return root;
+
+    }
+}
