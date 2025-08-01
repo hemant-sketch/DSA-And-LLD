@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/pascals-triangle/description/?envType=daily-question&envId=2025-08-01
 
 // TC = O(N^2)
-// SC = O(1)
+// SC = O(N^2)
 
 class Solution {
     public List<List<Integer>> generate(int numRows) {
