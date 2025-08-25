@@ -1,75 +1,86 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 class Main {
-    public class PriorityQueue {
+
+    public static class PriorityQueue {
         ArrayList<Integer> data = new ArrayList<>();
-    }
 
-    public PriorityQueue() {
+        public PriorityQueue() {
         }
 
-    public PriorityQueue(int[] arr) { //agar ek saath poora array aagya       
-        // for(int val: data) add(val);  // aise O(N*log N) time lega
-
-        for (int val : arr)                                             // but aise O(N) and per insertion is O(1)
-            data.add(val); // Complete Binary Tree
-        for (int idx = data.size() - 1; idx >= 0; idx--)
-            downheapify(idx); // Heap Order Property
-    }
-    
-    public void add(int val) {   //O(logN)because of upheapify
-        data.add(val);
-        upheapify(data.size()-1)
-    }
-    
-    void upheapify(int idx) {    //O(logN)
-        if(idx = 0) return; //top par hi add hua hai
-        
-        int par = (idx - 1) / 2;
-        if(data.get(par) < data.get(idx)) return;    // idhar > krde agar max heap banana hai
-        Collections.swap(data, par, idx);
-        upheapify(par);
-    }
-    
-    public int peek() {   //O(1)
-        if(data.size() == 0){
-            System.out.println("Undeflow");
-            return -1
-        }
-        return data.get(0);
-    }
-    
-    public int size() {   ////O(1)
-            return data.size();
-    }
-    
-    public int remove() {      //O(logN) because of downheapify
-        if(data.size() == 0){
-            System.out.println("Underflow");
-            return -1;
+        public PriorityQueue(int[] arr) {
+            for (int val : arr) {
+                data.add(val);
+            }
+            // Start from the first non-leaf node and heapify upwards
+            for (int i = (data.size() / 2) - 1; i >= 0; i--) {
+                downheapify(i);
+            }
         }
         
-        int val = data.get(0);
-        Collections.swap(data, val, data.size()-1);
-        data.remove(data.size()-1);
-        downheapify(0);
-        return val;
-    }
-    
-    void downheapify(int idx) {    //O(logN)
-        int left = 2*left + 1;
-        int right = 2*left + 2;
-        int min = idx;
-        
-        if(left < data.size() && data.get(left) < data.get(min)){   // idhar > krde agar max heap banana hai
-            min = left;
+        public int size() { //1
+            return this.data.size();
         }
-        if(right < data.size() && data.get(right) < data.get(min)){   // idhar > krde agar max heap banana hai
-            min = right;
+
+        public boolean isEmpty() {
+            return this.data.isEmpty();
         }
-        
-        if(min == idx) return;
-        Collections.swap(data, idx, ,min);
-        downheapify(min);
+
+        public void add(int val) { //logn
+            data.add(val);
+            upheapify(data.size() - 1);
+        }
+
+        private void upheapify(int idx) { //logn
+            if (idx == 0) {
+                return;
+            }
+
+            int par = (idx - 1) / 2;
+            if (data.get(par) > data.get(idx)) {
+                Collections.swap(data, par, idx);
+                upheapify(par);
+            }
+        }
+
+        public int peek() {
+            if (data.size() == 0) {
+                System.out.println("Underflow");
+                return -1;
+            }
+            return data.get(0);
+        }
+
+        public int remove() { //logn
+            if (data.size() == 0) {
+                System.out.println("Underflow");
+                return -1;
+            }
+            
+            Collections.swap(data, 0, data.size() - 1);
+            int val = data.remove(data.size() - 1);
+            downheapify(0);
+            return val;
+        }
+
+        private void downheapify(int idx) {  //logn
+            int min = idx;
+            int left = 2 * idx + 1;
+            int right = 2 * idx + 2;
+
+            if (left < data.size() && data.get(left) < data.get(min)) {
+                min = left;
+            }
+
+            if (right < data.size() && data.get(right) < data.get(min)) {
+                min = right;
+            }
+            
+            if (min != idx) {
+                Collections.swap(data, idx, min);
+                downheapify(min);
+            }
+        }
     }
-} 
-
-
+}
