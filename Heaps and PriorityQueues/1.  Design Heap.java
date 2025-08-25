@@ -9,13 +9,13 @@ class Main {
         public PriorityQueue() {
         }
 
-        public PriorityQueue(int[] arr) {
+        public PriorityQueue(int[] arr) {   //in case hume offline daalna hai   //n
             for (int val : arr) {
                 data.add(val);
             }
-            // Start from the first non-leaf node and heapify upwards
+            
             for (int i = (data.size() / 2) - 1; i >= 0; i--) {
-                downheapify(i);
+                downheapify(i);   // here downheapify kiuki upheapify nlogn mein krega kaam mein
             }
         }
         
