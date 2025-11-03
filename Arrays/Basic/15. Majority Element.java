@@ -4,7 +4,7 @@
 // Tc = O(n)
 // Sc = O(1)
 
-class Solution {
+class Solution {     // this code will work only if majority exists
     public int majorityElement(int[] nums) {
         int majority = 0;
         int lead = 0;
