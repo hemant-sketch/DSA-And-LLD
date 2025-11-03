@@ -11,7 +11,7 @@ class Solution {
 
         for(int idx = 0; idx < n; idx++) {
             int original = nums[idx] % (n+1);
-            nums[original - 1] += (n+1);   // [1, n] to [0, n-1]
+            nums[original - 1] += (n+1);   // [1, n] to [0, n-1] basically indices favourable banae
         }
 
         List<Integer> ans = new ArrayList<>();
