@@ -25,7 +25,7 @@ class Solution {
     }
 
     public int pivotIndex(int[] nums) {
-        int[] prefix = getPrefix(nums);
+        int[] prefix = getPrefix(nums);  //shallow copy hora idhr
         int[] suffix = getSuffix(nums);
 
         for (int idx = 0; idx < nums.length; idx++) {
