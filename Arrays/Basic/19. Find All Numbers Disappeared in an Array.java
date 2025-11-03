@@ -5,15 +5,13 @@
 // Sc = O(1)
 
 
-
-
 class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         int n = nums.length;
 
         for(int idx = 0; idx < n; idx++) {
             int original = nums[idx] % (n+1);
-            nums[original - 1] += (n+1);
+            nums[original - 1] += (n+1);   // [0, n] to [1, n-1]
         }
 
         List<Integer> ans = new ArrayList<>();
