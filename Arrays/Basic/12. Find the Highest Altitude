@@ -1,0 +1,19 @@
+// lc 1732
+// https://leetcode.com/problems/find-the-highest-altitude/
+
+// Tc = O(n)
+// Sc = O(1)
+
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int ans = 0;
+        int altitude = 0;
+        
+        for(int val : gain){
+            altitude += val;
+            ans = Math.max(ans, altitude);
+        }
+
+        return ans;
+    }
+}
