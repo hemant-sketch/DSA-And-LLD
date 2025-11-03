@@ -16,7 +16,7 @@ class Solution {
                 secondLargest = largest;
                 largest = nums[idx];
             }
-            else if(nums[idx] > secondLargest) {
+            else if(nums[idx] > secondLargest) {    //this else if very imp not if
                 secondLargest = nums[idx];
             }
             if(nums[idx] <= smallest){
