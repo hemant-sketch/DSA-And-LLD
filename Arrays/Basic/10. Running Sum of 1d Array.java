@@ -17,3 +17,15 @@ class Solution {
         return ans;
     }
 }
+
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int[] ans = new int[nums.length];
+        
+        for(int idx = 0; idx < nums.length; idx++) {
+            ans[idx] = nums[idx] + (idx > 0 ? ans[idx-1] : 0);
+        }
+
+        return ans;
+    }
+}
