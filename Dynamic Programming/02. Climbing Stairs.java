@@ -23,7 +23,7 @@ class Solution {
     public int climbStairs(int n) {
         if(n == 0) return 1;
 
-        if(n < 0) return 0;
+        //if(n < 0) return 0;
 
         int way1 = n-1 >= 0 ? climbStairs(n-1) : 0;
         int way2 = n-2 >= 0 ? climbStairs(n-2) : 0;
@@ -37,7 +37,7 @@ class Solution {
 class Solution {
     public int helper(int dp[], int n) {
         if(n == 0) return 1;
-        if(n < 0) return 0;
+        //if(n < 0) return 0;
 
         if(dp[n] != -1) return dp[n];
 
