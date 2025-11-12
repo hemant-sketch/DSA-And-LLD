@@ -1,6 +1,6 @@
 // https://www.geeksforgeeks.org/problems/run-length-encoding/1
 
-// Tc = O(N)
+// Tc = O(2N)
 // Sc = O(1)
 
 class Solution {
