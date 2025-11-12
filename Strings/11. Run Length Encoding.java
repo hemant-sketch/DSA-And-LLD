@@ -19,6 +19,9 @@ class Solution {
             }
             
             ans.append(ch);
+            // if(freq > 1) {      // agar 1 par freq nahi daalni ho toh
+            //     ans.append(freq);
+            // }
             ans.append(freq);
             left = right;
         }
