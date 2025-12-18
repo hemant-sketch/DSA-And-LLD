@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/min-cost-climbing-stairs/
 
 // TC O(N)
-// SC O(N)
+// SC O(N)   //this ques can be done in O(1) also
 
 class Solution {
     public int memo(int src, int[] cost, int[] dp) {
