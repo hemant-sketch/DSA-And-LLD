@@ -5,14 +5,14 @@
 // OC O(N)
 
 class Solution {
-    public int memo(int src, int[] reach, int[] dp) {
-        if (src >= reach.length-1) return 0;
+    public int memo(int src, int[] maxReach, int[] dp) {
+        if (src >= maxReach.length-1) return 0;
         if(dp[src] != -1) return dp[src];
 
         int min = Integer.MAX_VALUE;
-        for(int jump = 1; jump <= reach[src]; jump++){
-            if((jump + src) < reach.length) {
-                min = Math.min(min, memo(src + jump, reach, dp));
+        for(int reach = 1; reach <= maxReach[src]; reach++){
+            if((reach + src) < maxReach.length) {
+                min = Math.min(min, memo(src + reach, maxReach, dp));
             }
         }
         if(min != Integer.MAX_VALUE) return dp[src] = min + 1;
