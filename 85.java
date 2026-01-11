@@ -1,33 +1,64 @@
 class Solution {
-  public int maximalRectangle(char[][] matrix) {
-    if (matrix.length == 0)
-      return 0;
+    public int[] rightNSE(int[] heights) {
+        Stack<Integer> stk = new Stack();
+        int[] res = new int[heights.length];
 
-    int ans = 0;
-    int[] hist = new int[matrix[0].length];
-
-    for (char[] row : matrix) {
-      for (int i = 0; i < row.length; ++i)
-        hist[i] = row[i] == '0' ? 0 : hist[i] + 1;
-      ans = Math.max(ans, largestRectangleArea(hist));
+        for(int idx = heights.length-1; idx >= 0; idx--) {
+            while(stk.size() != 0 && heights[stk.peek()] >= heights[idx]) {
+                stk.pop();
+            }
+            res[idx] = stk.size() > 0 ? stk.peek() : heights.length;
+            stk.push(idx);
+        }
+        return res;
     }
 
-    return ans;
-  }
+    public int[] leftNSE(int[] heights) {
+        Stack<Integer> stk = new Stack();
+        int[] res = new int[heights.length];
 
-  private int largestRectangleArea(int[] heights) {
-    int ans = 0;
-    Deque<Integer> stack = new ArrayDeque<>();
-
-    for (int i = 0; i <= heights.length; ++i) {
-      while (!stack.isEmpty() && (i == heights.length || heights[stack.peek()] > heights[i])) {
-        final int h = heights[stack.pop()];
-        final int w = stack.isEmpty() ? i : i - stack.peek() - 1;
-        ans = Math.max(ans, h * w);
-      }
-      stack.push(i);
+        for(int idx = 0; idx < heights.length; idx++) {
+            while(stk.size() != 0 && heights[stk.peek()] >= heights[idx]) {
+                stk.pop();
+            }
+            res[idx] = stk.size() > 0 ? stk.peek() : -1;
+            stk.push(idx);
+        }
+        return res;
     }
 
-    return ans;
-  }
+    public int largestAreaHistogram(int[] heights) {
+        int[] left = leftNSE(heights);
+        int[] right = rightNSE(heights);
+        int max = Integer.MIN_VALUE;
+
+        for(int idx = 0; idx < heights.length; idx++) {
+            max = Math.max(max, heights[idx]*(right[idx] - left[idx] - 1));
+        }
+        return max;
+    }
+
+    public int maximalRectangle(char[][] matrix) {
+        if(matrix.length == 0 || matrix[0].length == 0) return 0;
+        int[] heights = new int[matrix[0].length];
+        
+        for(int idx = 0; idx < matrix[0].length; idx++) {
+            heights[idx] = matrix[0][idx] == '1' ? 1 : 0;
+        }
+
+        int maxArea = largestAreaHistogram(heights);
+
+        for(int i = 1; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[0].length; j++) {
+                if(matrix[i][j] == '1') {
+                    heights[j]++;
+                }else{
+                    heights[j] = 0;
+                }
+            }
+
+            maxArea = Math.max(maxArea, largestAreaHistogram(heights));
+        }
+        return maxArea;
+    }
 }
