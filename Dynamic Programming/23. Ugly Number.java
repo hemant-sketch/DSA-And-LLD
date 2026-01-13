@@ -1,7 +1,7 @@
 // Lc 263
 // https://leetcode.com/problems/ugly-number/description/
 
-// TC O(N)
+// TC O(root N)
 // SC O(1)
 
 class Solution {
