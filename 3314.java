@@ -8,9 +8,6 @@ class Solution {
     return ans;
   }
 
-  // Returns the leading one of the last group of 1s in the binary
-  // representation of num. For example, if num = 0b10111, the leading one of
-  // the last group of 1s is 0b100.
   private int getLeadingOneOfLastGroupOfOnes(int num) {
     int leadingOne = 1;
     while ((num & leadingOne) > 0)
