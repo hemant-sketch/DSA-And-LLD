@@ -1,7 +1,9 @@
 // https://www.naukri.com/code360/problems/paint-house_1460385?leftPanelTabValue=PROBLEM
 
-//
-//
+// TC O(n*3)
+// SC O(n*3) 
+//    - DP O(n*3)
+//    - RCS O(n*3) yeh tle dedega kiuki input >= 10^5
 
 // memoization - gives TLE if n is more than 10^5
 public class Solution {
@@ -34,18 +36,12 @@ public class Solution {
 }
 
 
-
-
-
 // LintCode 515
 // https://www.lintcode.com/problem/515/
 
-// 
-//
-
-
-
 // tabulation - better than memo as no tle
+// TC O(n*3)
+// TC O(n*3)
 public class Solution {
     public int minCost(int[][] costs) {
         if(costs.length == 0) return 0;
@@ -62,6 +58,31 @@ public class Solution {
         }
 
         return Math.min(dp[costs.length-1][0], Math.min(dp[costs.length-1][1], dp[costs.length-1][2]));
+    }
+}
+
+// tabulation - space optimised
+// TC O(n)
+// TC O(1)
+public class Solution {
+    public int minCost(int[][] costs) {
+        int n = costs.length;
+        if(n == 0) return 0;
+
+        int prev0 = costs[0][0];
+        int prev1 = costs[0][1];
+        int prev2 = costs[0][2];
+
+        for(int idx = 1; idx < n; idx++) {
+            int curr0 = costs[idx][0] + Math.min(prev1, prev2);
+            int curr1 = costs[idx][1] + Math.min(prev0, prev2);
+            int curr2 = costs[idx][2] + Math.min(prev1, prev0);
+            prev0 = curr0;
+            prev1 = curr1;
+            prev2 = curr2;
+        }
+
+        return Math.min(prev0, Math.min(prev1, prev2));
     }
 }
 
