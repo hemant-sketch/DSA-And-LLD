@@ -1,4 +1,4 @@
-// O(log)
+// O(log(min(a,b))
 
 class Main {
 
