@@ -1,4 +1,4 @@
-class Solution {
+class Solution { mm
     public int jump(int[] nums) {
         int totalJumps = 0;
         int destination = nums.length - 1;
