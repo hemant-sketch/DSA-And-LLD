@@ -51,3 +51,33 @@ class Solution {
     }
 }
 
+
+
+// best approach
+class Solution {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int totalGas = 0, totalCost = 0;
+
+        for (int idx = 0; idx < gas.length; idx++) {
+            totalGas += gas[idx];
+            totalCost += cost[idx];
+        }
+
+        if (totalGas < totalCost) {
+            return -1;
+        }
+
+        int currentGas = 0, startIndex = 0;
+
+        for (int idx = 0; idx < gas.length; idx++) {
+            currentGas += gas[idx] - cost[idx];
+
+            if (currentGas < 0) {
+                startIndex = idx + 1;
+                currentGas = 0;
+            }
+        }
+
+        return startIndex;
+    }
+}
