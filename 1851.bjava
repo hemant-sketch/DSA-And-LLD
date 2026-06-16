@@ -1,0 +1,46 @@
+class Solution {
+    public int[] minInterval(int[][] intervals, int[] queries) {
+
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        int n = queries.length;
+        int[][] q = new int[n][2];
+
+        for (int idx = 0; idx < n; idx++) {
+            q[idx][0] = queries[idx];
+            q[idx][1] = idx;
+        }
+
+        Arrays.sort(q, (a, b) -> a[0] - b[0]);
+
+        int[] res = new int[n];
+
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+
+        int i = 0;
+
+        for (int[] query : q) {
+            int val = query[0];  2
+            int idx = query[1];  0
+
+            while (i < intervals.length && intervals[i][0] <= val) {
+
+                int start = intervals[i][0];
+                int end = intervals[i][1];
+
+                int len = end - start + 1;
+
+                minHeap.add(new int[]{len, end});
+                i++;
+            }
+
+            while (!minHeap.isEmpty() && minHeap.peek()[1] < val) {
+                minHeap.poll();
+            }
+
+            res[idx] = minHeap.isEmpty() ? -1 : minHeap.peek()[0];
+        }
+
+        return res;
+    }
+}
