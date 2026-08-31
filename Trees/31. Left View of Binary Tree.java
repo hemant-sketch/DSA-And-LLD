@@ -1,5 +1,5 @@
 // https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1
-//
+// O(n)
 
 class Solution {
 	public ArrayList<Integer> leftView(Node root) {
