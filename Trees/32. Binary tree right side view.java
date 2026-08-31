@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/binary-tree-right-side-view/
-
-//
+// O(n)
 
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
