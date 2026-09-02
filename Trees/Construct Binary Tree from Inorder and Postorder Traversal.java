@@ -1,6 +1,36 @@
 https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
 Lc 106
 
+    //Shraddha
+    class Solution {
+    int postIdx;
+
+    public int search(int[] inorder, int[] postorder, int left, int right) {
+        for(int idx = left; idx <= right; idx++) {
+            if(postorder[postIdx] == inorder[idx]) return idx;
+        }
+        return -1;
+    }
+
+    public TreeNode constructBinaryTree(int[] inorder, int[] postorder, int left, int right){
+        if(left > right) return null;
+        TreeNode root = new TreeNode(postorder[postIdx]);
+        int inIdx = search(inorder, postorder, 0, inorder.length-1);
+        postIdx--;
+
+        root.right = constructBinaryTree(inorder, postorder, inIdx+1, right);
+        root.left = constructBinaryTree(inorder, postorder, left, inIdx-1);
+
+        return root;
+    }
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        postIdx = postorder.length-1;
+        return constructBinaryTree(inorder, postorder, 0, inorder.length-1);
+    }
+}
+
+
 class Solution {
     int[] inorder, postorder;
 
