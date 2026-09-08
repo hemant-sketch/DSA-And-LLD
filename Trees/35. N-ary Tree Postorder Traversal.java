@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/n-ary-tree-postorder-traversal/description/
-// TC O(n) SC O(n)
+// TC O(n+e) SC O(n)
 
 class Solution {
     List<Integer> ans = new ArrayList<>();
